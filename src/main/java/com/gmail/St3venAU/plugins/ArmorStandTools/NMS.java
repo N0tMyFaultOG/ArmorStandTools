@@ -152,7 +152,7 @@ abstract class NMS {
         b.setType(Material.COMMAND_BLOCK);
         CommandBlock cb = (CommandBlock) b.getState();
         cb.setCommand("summon minecraft:armor_stand " + Utils.twoDec(as.getLocation().getX()) + " " + Utils.twoDec(as.getLocation().getY()) + " " + Utils.twoDec(as.getLocation().getZ()) + " "
-            + "{"
+                + "{"
                 + (as.isVisible()                  ? ""                     : "Invisible:1,"                                                  )
                 + (as.hasBasePlate()               ? ""                     : "NoBasePlate:1,"                                                )
                 + (as.hasGravity()                 ? ""                     : "NoGravity:1,"                                                  )
@@ -165,30 +165,31 @@ abstract class NMS {
                 + (as.getCustomName() == null      ? ""                     : ("CustomName:\"\\\"" + as.getCustomName() + "\\\"\",")          )
                 + (as.getLocation().getYaw() == 0F ? ""                     : ("Rotation:[" + Utils.twoDec(as.getLocation().getYaw()) + "f],"))
                 + "ArmorItems:["
-                    + (as.getBoots()      == null ? "{}," : ("{id:" + as.getBoots().getType().getKey().getKey()      + ",Count:" + as.getBoots().getAmount()      + ",tag:{Damage:" + as.getBoots().getDurability()      + getItemStackTags(as.getBoots())                               + "}},"))
-                    + (as.getLeggings()   == null ? "{}," : ("{id:" + as.getLeggings().getType().getKey().getKey()   + ",Count:" + as.getLeggings().getAmount()   + ",tag:{Damage:" + as.getLeggings().getDurability()   + getItemStackTags(as.getLeggings())                            + "}},"))
-                    + (as.getChestplate() == null ? "{}," : ("{id:" + as.getChestplate().getType().getKey().getKey() + ",Count:" + as.getChestplate().getAmount() + ",tag:{Damage:" + as.getChestplate().getDurability() + getItemStackTags(as.getChestplate())                          + "}},"))
-                    + (as.getHelmet()     == null ? "{}"  : ("{id:" + as.getHelmet().getType().getKey().getKey()     + ",Count:" + as.getHelmet().getAmount()     + ",tag:{Damage:" + as.getHelmet().getDurability()     + getItemStackTags(as.getHelmet()) + skullOwner(as.getHelmet()) + "}}" ))
+                + (as.getBoots()      == null ? "{}," : ("{id:" + as.getBoots().getType().getKey().getKey()      + ",Count:" + as.getBoots().getAmount()      + ",tag:{Damage:" + as.getBoots().getDurability()      + getItemStackTags(as.getBoots())                               + "}},"))
+                + (as.getLeggings()   == null ? "{}," : ("{id:" + as.getLeggings().getType().getKey().getKey()   + ",Count:" + as.getLeggings().getAmount()   + ",tag:{Damage:" + as.getLeggings().getDurability()   + getItemStackTags(as.getLeggings())                            + "}},"))
+                + (as.getChestplate() == null ? "{}," : ("{id:" + as.getChestplate().getType().getKey().getKey() + ",Count:" + as.getChestplate().getAmount() + ",tag:{Damage:" + as.getChestplate().getDurability() + getItemStackTags(as.getChestplate())                          + "}},"))
+                + (as.getHelmet()     == null ? "{}"  : ("{id:" + as.getHelmet().getType().getKey().getKey()     + ",Count:" + as.getHelmet().getAmount()     + ",tag:{Damage:" + as.getHelmet().getDurability()     + getItemStackTags(as.getHelmet()) + skullOwner(as.getHelmet()) + "}}" ))
                 + "],"
                 + "HandItems:["
-                    + (as.getEquipment().getItemInMainHand() == null ? "{}," : ("{id:" + as.getEquipment().getItemInMainHand().getType().getKey().getKey() + ",Count:" + as.getEquipment().getItemInMainHand().getAmount() + ",tag:{Damage:" + as.getEquipment().getItemInMainHand().getDurability() + getItemStackTags(as.getEquipment().getItemInMainHand()) + "}},"))
-                    + (as.getEquipment().getItemInOffHand()  == null ? "{}"  : ("{id:" + as.getEquipment().getItemInOffHand().getType().getKey().getKey()  + ",Count:" + as.getEquipment().getItemInOffHand().getAmount()  + ",tag:{Damage:" + as.getEquipment().getItemInOffHand().getDurability()  + getItemStackTags(as.getEquipment().getItemInOffHand())  + "}}" ))
+                + (as.getEquipment().getItemInMainHand() == null ? "{}," : ("{id:" + as.getEquipment().getItemInMainHand().getType().getKey().getKey() + ",Count:" + as.getEquipment().getItemInMainHand().getAmount() + ",tag:{Damage:" + as.getEquipment().getItemInMainHand().getDurability() + getItemStackTags(as.getEquipment().getItemInMainHand()) + "}},"))
+                + (as.getEquipment().getItemInOffHand()  == null ? "{}"  : ("{id:" + as.getEquipment().getItemInOffHand().getType().getKey().getKey()  + ",Count:" + as.getEquipment().getItemInOffHand().getAmount()  + ",tag:{Damage:" + as.getEquipment().getItemInOffHand().getDurability()  + getItemStackTags(as.getEquipment().getItemInOffHand())  + "}}" ))
                 + "],"
                 + "Pose:{"
-                    + "Body:["     + Utils.angle(as.getBodyPose().getX())     + "f," + Utils.angle(as.getBodyPose().getY())     + "f," + Utils.angle(as.getBodyPose().getZ())     + "f],"
-                    + "Head:["     + Utils.angle(as.getHeadPose().getX())     + "f," + Utils.angle(as.getHeadPose().getY())     + "f," + Utils.angle(as.getHeadPose().getZ())     + "f],"
-                    + "LeftLeg:["  + Utils.angle(as.getLeftLegPose().getX())  + "f," + Utils.angle(as.getLeftLegPose().getY())  + "f," + Utils.angle(as.getLeftLegPose().getZ())  + "f],"
-                    + "RightLeg:[" + Utils.angle(as.getRightLegPose().getX()) + "f," + Utils.angle(as.getRightLegPose().getY()) + "f," + Utils.angle(as.getRightLegPose().getZ()) + "f],"
-                    + "LeftArm:["  + Utils.angle(as.getLeftArmPose().getX())  + "f," + Utils.angle(as.getLeftArmPose().getY())  + "f," + Utils.angle(as.getLeftArmPose().getZ())  + "f],"
-                    + "RightArm:[" + Utils.angle(as.getRightArmPose().getX()) + "f," + Utils.angle(as.getRightArmPose().getY()) + "f," + Utils.angle(as.getRightArmPose().getZ()) + "f]"
+                + "Body:["     + Utils.angle(as.getBodyPose().getX())     + "f," + Utils.angle(as.getBodyPose().getY())     + "f," + Utils.angle(as.getBodyPose().getZ())     + "f],"
+                + "Head:["     + Utils.angle(as.getHeadPose().getX())     + "f," + Utils.angle(as.getHeadPose().getY())     + "f," + Utils.angle(as.getHeadPose().getZ())     + "f],"
+                + "LeftLeg:["  + Utils.angle(as.getLeftLegPose().getX())  + "f," + Utils.angle(as.getLeftLegPose().getY())  + "f," + Utils.angle(as.getLeftLegPose().getZ())  + "f],"
+                + "RightLeg:[" + Utils.angle(as.getRightLegPose().getX()) + "f," + Utils.angle(as.getRightLegPose().getY()) + "f," + Utils.angle(as.getRightLegPose().getZ()) + "f],"
+                + "LeftArm:["  + Utils.angle(as.getLeftArmPose().getX())  + "f," + Utils.angle(as.getLeftArmPose().getY())  + "f," + Utils.angle(as.getLeftArmPose().getZ())  + "f],"
+                + "RightArm:[" + Utils.angle(as.getRightArmPose().getX()) + "f," + Utils.angle(as.getRightArmPose().getY()) + "f," + Utils.angle(as.getRightArmPose().getZ()) + "f]"
                 + "}"
-            + "}"
+                + "}"
         );
         cb.update();
     }
 
     ArmorStand clone(ArmorStand as) {
         ArmorStand clone = (ArmorStand) as.getWorld().spawnEntity(as.getLocation().add(1, 0, 0), EntityType.ARMOR_STAND);
+//        clone.set
         clone.setGravity(as.hasGravity());
         clone.setHelmet(as.getHelmet());
         clone.setChestplate(as.getChestplate());

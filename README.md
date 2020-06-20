@@ -3,6 +3,12 @@ A full suite of Armor Stand tools for CraftBukkit/Spigot
 
 Spigot resource page with plugin download: http://www.spigotmc.org/resources/armor-stand-tools.2237/
 
+### This fork adds compatibility for [PlotSquared v5](https://www.spigotmc.org/resources/plotsquared-v5.77506/) and fixes a few other minor issues.
+
+### Building this Fork
+Gradle is the recommended way to build the project. Use `./gradlew build` in the main project directory to build the project. The output is located at `/build/libs/ArmorStandTools-<version>.jar`.
+Precompiled versions can be obtained from our CI, click [here](https://ci.athion.net/job/ArmorStandTools/).
+
 Inspiration
 -----------
 I wanted to create an armor stand for each kit in my mini-game, and I quickly became frustrated with trying to use commands and numeric values to position the legs, arms, body and head of each armor stand, so I created this plugin which allows you to do all of this with ease. Among other features you can create any pose you wish just by holding right click on the tools and moving your cursor up and down on the armor stand. The plugin can also generate a summon command that will re-create the armor stand at any time.

@@ -88,8 +88,8 @@ public class Main extends JavaPlugin {
         String nmsVersion = getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
         String usingVersion;
         if(nmsVersion.startsWith("v1_4")  || nmsVersion.startsWith("v1_5")  || nmsVersion.startsWith("v1_6") ||
-           nmsVersion.startsWith("v1_7")  || nmsVersion.startsWith("v1_8")  || nmsVersion.startsWith("v1_9") ||
-           nmsVersion.startsWith("v1_10") || nmsVersion.startsWith("v1_11") || nmsVersion.startsWith("v1_12")) {
+                nmsVersion.startsWith("v1_7")  || nmsVersion.startsWith("v1_8")  || nmsVersion.startsWith("v1_9") ||
+                nmsVersion.startsWith("v1_10") || nmsVersion.startsWith("v1_11") || nmsVersion.startsWith("v1_12")) {
             getLogger().warning("This Craftbukkit/Spigot version is not supported. Craftbukkit/Spigot 1.13+ required. Loading plugin failed.");
             return false;
         }
@@ -172,7 +172,7 @@ public class Main extends JavaPlugin {
             p.sendMessage(ChatColor.RED + Config.noAirError);
             return;
         }
-        b.setType(Material.SIGN);
+        b.setType(Material.OAK_SIGN);
         nms.openSign(p, b);
         b.setMetadata("armorStand", new FixedMetadataValue(this, as.getUniqueId()));
         b.setMetadata("setName", new FixedMetadataValue(this, true));
@@ -184,7 +184,7 @@ public class Main extends JavaPlugin {
             p.sendMessage(ChatColor.RED + Config.noAirError);
             return;
         }
-        b.setType(Material.SIGN);
+        b.setType(Material.OAK_SIGN);
         nms.openSign(p, b);
         b.setMetadata("armorStand", new FixedMetadataValue(this, as.getUniqueId()));
         b.setMetadata("setSkull", new FixedMetadataValue(this, true));

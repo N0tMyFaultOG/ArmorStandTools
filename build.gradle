@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+
+    maven { url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
+    maven { url = "https://maven.enginehub.org/repo/" }
+    maven { url = "https://mvn.intellectualsites.com/content/groups/public/" }
+    maven { url = "https://repo.destroystokyo.com/repository/maven-snapshots/" }
+    maven { url = "http://repo.extendedclip.com/content/repositories/placeholderapi/" }
+    maven { url = "https://jitpack.io" }
+    maven { url = "http://repo.maven.apache.org/maven2" }
+    maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
+dependencies {
+    implementation("com.plotsquared:PlotSquared:5.11.1")
+    implementation("com.plotsquared:PlotSquared-Bukkit:5.11.1") { transitive = false }
+    implementation("com.sk89q.worldedit:worldedit-bukkit:7.1.0-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.15.2-R0.1-SNAPSHOT")
+    implementation("com.sk89q.worldguard:worldguard-bukkit:7.0.2")
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+version = "3.5.1"
+
+processResources {
+    from('src/main/resources') {
+        include 'plugin.yml'
+        expand(
+                version: project.version
+        )
+        include 'language.yml'
+        include 'config.yml'
+    }
+}
