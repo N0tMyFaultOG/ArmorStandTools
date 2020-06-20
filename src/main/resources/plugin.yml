@@ -3,6 +3,7 @@ name: ArmorStandTools
 version: "${version}"
 api-version: 1.15
 authors: [St3venAU, NotMyFault]
+website: https://www.spigotmc.org/resources/armor-stand-tools.2237/
 description: Armor stand manipulation tools
 softdepend: [WorldGuard, PlotSquared]
 commands:
@@ -10,6 +11,21 @@ commands:
       description: Give yourself the armor stand tools
       aliases: ast
       usage: Usage /astools or /astools reload
+      permission: astools.use
    ascmd:
       description: View/Remove/Assign the command assigned to the nearest armor stand
       usage: Usage /ascmd view, /ascmd remove, /ascmd assign <player/console> <command>
+permissions:
+  astools.command
+  astools.reload
+  astools.use
+  astools.clone
+  astools.summon
+  astools.head
+  astools.cmdblock
+  astools.ascmd.assign.console
+  astools.ascmd.assign.player
+  astools.ascmd.remove
+  astools.ascmd.view
+  astools.ascmd.execute
+  astools.bypass-wg-flag
